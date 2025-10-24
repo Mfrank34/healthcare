@@ -27,8 +27,8 @@ public class Car {
         this.model = model;
     }
 
-    public void set_tank_size(int tank_size) {
-        tank_size = tank_size;
+    public void set_tank_size(int size) {
+        tank_size = size;
     }
 
     public void set_fuelin_tank(Double fuelin) {
