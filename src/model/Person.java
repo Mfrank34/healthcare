@@ -1,16 +1,18 @@
-public class person {
-    private String id;
-    private String first;
-    private String last;
-    private String phone;
-    private String email;
+package model;
 
-    public person() {
+public class Person {
+    protected String WorkplaceId;
+    protected String first;
+    protected String last;
+    protected String phone;
+    protected String email;
+
+    public Person() {
 
     }
 
-    public person(String id, String first, String last, String phone, String email) {
-        this.id = id;
+    public Person(String id, String first, String last, String phone, String email) {
+        this.WorkplaceId = id;
         this.first = first;
         this.last = last;
         this.phone = phone;
@@ -19,7 +21,7 @@ public class person {
 
     // setters
     public void set_id(String id) {
-        this.id = id;
+        this.WorkplaceId = id;
     }
 
     public void set_first(String first) {
@@ -40,7 +42,7 @@ public class person {
 
     // getters
     public String get_id() {
-        return id;
+        return WorkplaceId;
     }
 
     public String get_first(){
