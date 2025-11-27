@@ -1,5 +1,7 @@
 package Views;
 
+import Model.Staff;
+
 import javax.swing.*;
 import java.util.List;
 
@@ -9,5 +11,8 @@ public abstract class BaseForm extends JFrame {
                 String.join("\n", errors),
                 "Validation Errors",
                 JOptionPane.ERROR_MESSAGE);
+    }
+    BaseForm(String title) {
+        this.setTitle(title);
     }
 }

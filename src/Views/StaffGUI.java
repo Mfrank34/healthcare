@@ -1,6 +1,6 @@
 package Views;
 
-import Model.Patients;
+import Model.Staff;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,18 +8,18 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientsGUI extends BaseForm {
+public class StaffGUI extends BaseForm {
     private final List<JTextField> fields = new ArrayList<>();
     private final JButton submitButton = new JButton("Submit");
 
     private final String[] labels = {
-            "ID:", "First Name:", "Last Name:", "Phone Number:", "Email:",
-            "NHS Number:", "Gender:", "Birth Date:", "Address:", "PostCode:",
-            "Emergency Name:", "Emergency Number:", "Registration:", "GP - ID:"
+            "ID:", "First Name:", "Last Name:", "Phone Number:",
+            "Email:", "Start Date:", "Status:", "Role:",
+            "Department:", "Facility:", "Line Manager:", "Access:"
     };
 
-    public PatientsGUI() {
-        super("Patients Form");
+    public StaffGUI() {
+        super("Staff Form");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
