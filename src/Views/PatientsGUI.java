@@ -1,68 +1,53 @@
 package Views;
+
+import Model.Patients;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientsGUI extends JFrame {
-    // data collection
-    private List<JTextField> data = new ArrayList<>();
-    private final String[] elements = {
-            "ID:",
-            "First Name:",
-            "Last Name:",
-            "Phone Number:",
-            "Email:",
-            "NHS Number:",
-            "Gender:",
-            "Birth Date:",
-            "Address:",
-            "PostCode:",
-            "Emergency Name:",
-            "Emergency Number:",
-            "Registration",
-            "gpId"
+public class PatientsGUI extends BaseForm {
+    private final List<JTextField> fields = new ArrayList<>();
+    private final JButton submitButton = new JButton("Submit");
+
+    private final String[] labels = {
+            "ID:", "First Name:", "Last Name:", "Phone Number:", "Email:",
+            "NHS Number:", "Gender:", "Birth Date:", "Address:", "PostCode:",
+            "Emergency Name:", "Emergency Number:", "Registration:", "GP - ID:"
     };
 
-    public PatientsGUI()
-    {
-        super("Patients Form");
+    public PatientsGUI() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        add(BorderLayout.NORTH, createSetPatientsPanel());
+        JPanel panel = new JPanel(new GridLayout(labels.length, 2));
+        for (String label : labels) {
+            panel.add(new JLabel(label));
+            JTextField field = new JTextField();
+            panel.add(field);
+            fields.add(field);
+        }
+        add(panel, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(submitButton);
+        add(buttonPanel, BorderLayout.SOUTH);
 
         setSize(400, 300);
         setVisible(true);
     }
 
-    public JPanel createSetPatientsPanel()
-    {
-        // setting up titles
-        JPanel SetPatientPanels = new JPanel(new BorderLayout());
-        JPanel panel = new JPanel(new GridLayout(elements.length, 1));
-
-        for (String index : elements)
-        {
-            panel.add(new JLabel(index));
-            JTextField newTextBox = new JTextField();
-            panel.add(newTextBox);
-            data.add(newTextBox);
+    public List<String> getData() {
+        List<String> data = new ArrayList<>();
+        for (JTextField field : fields) {
+            data.add(field.getText());
         }
-        return panel;
+        return data;
     }
 
-    public String getDate()
-    {
-        List<String> allData = new ArrayList<>();
-
-        for (int i = 0; i < elements.length; i++) {
-            String currentField = data.get(i).getText();
-            String currentElement = elements[i];
-
-            allData.add(currentField);
-            allData.add(currentElement);
-        }
-
-        return allData.toString();
+    public void addSubmitListener(ActionListener listener) {
+        submitButton.addActionListener(listener);
     }
 }

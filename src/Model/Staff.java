@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 public class Staff extends Employee {
     private String role;

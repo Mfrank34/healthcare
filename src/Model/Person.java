@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 public class Person {
     protected String WorkplaceId;
@@ -7,9 +7,7 @@ public class Person {
     protected String phone;
     protected String email;
 
-    public Person() {
-
-    }
+    public Person() {}
 
     public Person(String id, String first, String last, String phone, String email) {
         this.WorkplaceId = id;
@@ -20,48 +18,46 @@ public class Person {
     }
 
     // setters
-    public void set_id(String id) {
+    public void setId(String id) {
         this.WorkplaceId = id;
     }
 
-    public void set_first(String first) {
+    public void setFirst(String first) {
         this.first = first;
     }
 
-    public void set_last(String last) {
+    public void setLast(String last) {
         this.last = last;
     }
 
-    public void set_phone(String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public void set_email(String email) {
-        this.email = email;
-    }
+    public void setEmail(String email) {this.email = email; }
 
     // getters
-    public String get_id() {
+    public String getId() {
         return WorkplaceId;
     }
 
-    public String get_first(){
+    public String getFirst(){
         return first;
     }
 
-    public String get_last() {
+    public String getLast() {
         return last;
     }
 
-    public String get_fullname() {
+    public String getFullname() {
         return first + " " + last;
     }
 
-    public String get_phone() {
+    public String getPhone() {
         return phone;
     }
 
-    public String get_email() {
+    public String getEmail() {
         return email;
     }
 }
