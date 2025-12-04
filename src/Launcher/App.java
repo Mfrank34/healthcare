@@ -1,20 +1,20 @@
 package Launcher;
 
 import Controllers.PatientsController;
-import Controllers.StaffController;
-import Model.Staff;
-import Views.PatientsGUI;
+import Controllers.CliniciansController;
+import Model.CliniciansForm;
+import Views.PatientsForm;
 import Model.Patients;
-import Views.StaffGUI;
+import Views.StaffForm;
 
 public class App {
     public static void main(String[] args) {
         Patients model = new Patients();
-        PatientsGUI view = new PatientsGUI();
+        PatientsForm view = new PatientsForm();
         new PatientsController(view, model);
 
-        Staff model2 = new Staff();
-        StaffGUI view2 = new StaffGUI();
-        new StaffController(view2, model2);
+        CliniciansForm model2 = new CliniciansForm();
+        StaffForm view2 = new StaffForm();
+        new CliniciansController(view2, model2);
     }
 }

@@ -1,17 +1,17 @@
 package Controllers;
 
+import Validation.CliniciansValidator;
 import Views.StaffForm;
-import Model.Staff;
-import Validation.StaffValidator;
+import Model.Clinicians;
 
 // java imports
 import java.util.List;
 
-public class StaffController extends BaseController<Staff> {
+public class CliniciansController extends BaseController<Clinicians> {
     private final StaffForm staffView;
 
-    public StaffController(StaffForm view, Staff model) {
-        super(view, model, new StaffValidator());
+    public CliniciansController(StaffForm view, Clinicians model) {
+        super(view, model, new CliniciansValidator());
         this.staffView = view;
 
         view.addSubmitListener(e -> {
@@ -24,11 +24,11 @@ public class StaffController extends BaseController<Staff> {
                 model.setEmail(data.get(4));
                 model.setStartDate(data.get(5));
                 model.setStatus(data.get(6));
-                model.setRole(data.get(7));
-                model.setDepartment(data.get(8));
-                model.setFacility(data.get(9));
-                model.setLineManager(data.get(10));
-                model.setAccess(data.get(11));
+                model.setTitle(data.get(7));
+                model.setSpeciality(data.get(8));
+                model.setGmc(data.get(9));
+                model.setWorkplaceId(data.get(10));
+                model.setType(data.get(11));
             }
             handleSubmit();
         });

@@ -13,7 +13,6 @@ public class Facilities {
     private String capacity;
     private String specialities;
 
-
     public String getFid() {
         return fId;
     }
